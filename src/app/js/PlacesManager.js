@@ -148,9 +148,15 @@ PlacesManager.prototype.createRecentIcon=function createRecentIcon(item){
    
    $(icon).attr("target", item["href"]);
    
-   iconimage=self.renderIcon(mimeicon);
+   var iconimage=self.renderIcon(mimeicon);
    
-   var name=$(document.createElement("div")).addClass("applabel").html(filename);
+   
+   
+   
+   var reducedText=filename;
+   if (reducedText.length>11) reducedText=reducedText.substring(0,11)+"...";	
+   
+   var name=$(document.createElement("div")).addClass("applabel").html(reducedText);
    
    icon.append(iconimage, name);
    
