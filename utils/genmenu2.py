@@ -21,6 +21,7 @@ import shutil
 import pprint
 import ntpath
 import glob
+import subprocess
 
 def give_me_png(filename):
   if filename is not None:
@@ -31,15 +32,17 @@ def give_me_png(filename):
       return filename
     elif filename[-4:]==".svg": # if is svg, let's render
       pngpath=xdg_config_home+"/llx-launchpad/icons/"
-      f=open(filename);
-      svg=f.read();
+      
+      '''f=open(filename);
+      svg=f.read();'''
       pngfile=pngpath+ntpath.basename(filename)+".png"
-      fout=open(pngfile, "w")
+      '''fout=open(pngfile, "w")
       print "1"
       cairosvg.svg2png(bytestring=svg,write_to=fout);
       print "2"
       fout.close()
-      print "3"
+      print "3"'''
+      subprocess.Popen("rsvg-convert -w 96 -h 96 "+filename+ ">" +pngfile, shell=True)
       return pngfile
       
     else:   # otherwise return an empty icon
@@ -131,7 +134,7 @@ def parseMenu(menu, menuJSON):
 
 #m=parse("/etc/xdg/menus/applications.menu");
 #m=parse("/etc/xdg/menus/gnome-flashback-applications.menu");
-m=parse("/etc/xdg/menus/ja.menu");
+m=parse("/etc/xdg/menus/corellian.menu");
 catmenu={"categories":[]}
 
 # Cleaning directory for icons:

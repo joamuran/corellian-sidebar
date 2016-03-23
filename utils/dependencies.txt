@@ -1,0 +1,15 @@
+nodejs-legacy / nodejs
+npm
+python-cairosvg --->> Not needed, remove from genmenu2.py
+
+librsvg2-bin -> esta si
+
+Install:
+on src -> npm install
+on utils-> ...
+sudo cp corellian.menu /etc/xdg/menus/
+mkdir -p ~/.config/llx-launchpad/icons/
+python ./genmenu2.py 
+cp mymenu.json ~/.config/llx-launchpad/
+
+on src -> npm start

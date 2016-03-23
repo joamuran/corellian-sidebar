@@ -20,7 +20,7 @@ WindowManager.prototype.handleEvents=function handleEvents(){
     /*
      * COMMENT FOR DEBUG DEV TOOLS*/
     
-    return -1; // comentar en produccio per poder amagar finestra
+    //return -1; // comentar en produccio per poder amagar finestra
      $(document).on({
         mouseenter: function() {
           if (timeout != null) { clearTimeout(timeout); }

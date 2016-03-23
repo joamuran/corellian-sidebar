@@ -33,7 +33,7 @@ app.on('ready', function() {
   //var display=electronScreen.getPrimaryDisplay();
   
   // OPT 3: Find primary display
-  var display=(electronScreen.getAllDisplays())[1];
+  //var display=(electronScreen.getAllDisplays())[1];
   
   // Getting Workarea and displat size
   wa=display.workArea;
@@ -70,8 +70,8 @@ app.on('ready', function() {
 
   
   // Open the DevTools.
-  mainWindow.setSize(1400, displaySize.height-64);
-  mainWindow.webContents.openDevTools();
+  //mainWindow.setSize(1400, displaySize.height-64);
+  //mainWindow.webContents.openDevTools();
   
   
 
